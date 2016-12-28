@@ -2,6 +2,7 @@ import React from 'react'
 
 import InputForm from './InputForm'
 import HelpButton from './HelpButton'
+import SoundButton from './SoundButton'
 
 const styles = {
   'Input': {
@@ -13,13 +14,22 @@ const styles = {
   }
 }
 
-function UserInput ({ actions }) {
-  return (
-    <div className="user-input" style={styles['Input']}>
-      <InputForm onChange={actions.textInputChanged} onSubmit={actions.submitButtonPressed} />
-      <HelpButton onClick={actions.helpButtonPressed} />
-    </div>
-  )
+class UserInput extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.actions = this.props.actions
+  }
+
+  render () {
+    return (
+      <div className="user-input" style={styles['Input']}>
+        <InputForm onChange={this,actions.textInputChanged} onSubmit={this.actions.submitButtonPressed} />
+        <HelpButton onClick={this.actions.helpButtonPressed} />
+        <SoundButton onClick={this.actions.audioButtonPressed} active={this.props.audio} />
+      </div>
+    )
+  }
 }
 
 export default UserInput

@@ -1,7 +1,8 @@
 import {
   TEXT_INPUT_CHANGED,
   SUBMIT_BUTTON_PRESSED,
-  HELP_BUTTON_PRESSED
+  HELP_BUTTON_PRESSED,
+  AUDIO_BUTTON_PRESSED
 } from './types'
 
 export const textInputChanged = (text) => ({
@@ -15,4 +16,8 @@ export const submitButtonPressed = () => ({
 
 export const helpButtonPressed = () => ({
   type: HELP_BUTTON_PRESSED
+})
+
+export const audioButtonPressed = () => ({
+  type: AUDIO_BUTTON_PRESSED
 })

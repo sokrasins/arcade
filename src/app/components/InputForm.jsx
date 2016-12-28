@@ -18,6 +18,7 @@ const styles = {
 
   'Submit': {
     display: 'flex',
+    fontSize: '20px',
     justifyContent: 'center',
     height: '40px',
     width: '40px',
@@ -52,7 +53,7 @@ class InputForm extends React.Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit} style={styles['Form']} autoComplete="off">
-        <input type="text" name="command" ref="command" onChange={this.handleChange} style={styles['TextInput']} autoFocus />
+        <input type="text" name="command" ref="command" onChange={this.handleChange} style={styles['TextInput']} autoFocus fontFamily="Lucida Console, Monaco, monospace" />
         <input type="submit" value="&#x25ba;" style={styles['Submit']} />
       </form>
     )

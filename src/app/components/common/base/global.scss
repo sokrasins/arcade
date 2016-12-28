@@ -10,8 +10,12 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Lucida Console', Monaco, monospace;
   font-size: 20px;
+}
+
+input {
+  font-family: 'Lucida Console', Monaco, monospace;
 }
 
 .container {
@@ -22,4 +26,21 @@ body {
 #react-root {
   height: 100%;
   width: 100%;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(85,85,85,0.8); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(85,85,85,0.4); 
 }
