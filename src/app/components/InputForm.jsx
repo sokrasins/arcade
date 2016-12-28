@@ -2,14 +2,29 @@ import React from 'react'
 
 const styles = {
   'TextInput': {
-    width: '400px',
-    backgroundColor: '#555555',
-    color: '#FFFFFF'
+    width: '100%',
+    backgroundColor: '#222222',
+    color: '#FFFFFF',
+    fontSize: '20px',
+    outline: 'none',
+    border: 'none'
   },
 
   'Form': {
-    display: 'inline',
-    padding: '10px'
+    display: 'flex',
+    width: '95%',
+    height: '40px',
+  },
+
+  'Submit': {
+    display: 'flex',
+    justifyContent: 'center',
+    height: '40px',
+    width: '40px',
+    border: 'none',
+    margin: 'auto',
+    backgroundColor: '#555',
+    outline: 'none'
   }
 }
 
@@ -36,9 +51,9 @@ class InputForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit} style={styles['Form']}>
+      <form onSubmit={this.handleSubmit} style={styles['Form']} autoComplete="off">
         <input type="text" name="command" ref="command" onChange={this.handleChange} style={styles['TextInput']} autoFocus />
-        <input type="submit" value="Send" />
+        <input type="submit" value="&#x25ba;" style={styles['Submit']} />
       </form>
     )
   }

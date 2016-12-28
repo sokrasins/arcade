@@ -2,7 +2,11 @@ import React, { PropTypes } from 'react'
 
 const styles = {
   'main': {
-    backgroundColor: '#333333'
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#111111',
+    width: '100%',
+    height: '100%'
   }
 }
 
