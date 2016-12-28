@@ -66,6 +66,12 @@ module.exports = (options) => {
       loaders: ['style', 'css', 'sass'],
     });
 
+    webpackConfig.module.loaders.push({
+      test: /\.mp3$/,
+      loaders: 'file-loader' 
+    });
+
+
     webpackConfig.devServer = {
       contentBase: Path.join(__dirname, '../'),
       hot: true,

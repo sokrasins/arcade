@@ -2,6 +2,7 @@ import React from 'react'
 
 import TextDisplayContainer from '../containers/TextDisplayContainer'
 import UserInputContainer from '../containers/UserInputContainer'
+import AudioContainer from '../containers/AudioContainer'
 
 const styles = {
   'game': {
@@ -18,6 +19,7 @@ function Game () {
     <div className="game" style={styles['game']}>
       <TextDisplayContainer />
       <UserInputContainer />
+      <AudioContainer />
     </div>
   )
 }
