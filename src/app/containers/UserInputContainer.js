@@ -1,16 +1,22 @@
 import { connect } from 'react-redux'
-import { 
-  textInputChanged, 
-  submitButtonPressed, 
+import {
+  textInputChanged,
+  submitButtonPressed,
   helpButtonPressed,
-  audioButtonPressed
+  audioButtonPressed,
+  helpButtonMousedown,
+  helpButtonMouseup,
+  submitButtonDown,
+  submitButtonUp
 } from '../actions/index.js'
 
 import UserInput from '../components/UserInput'
 
 const mapStateToProps = (state) => {
   return {
-    audio: state.audio
+    audio: state.audio,
+    help: state.help,
+    submit: state.submit
   }
 }
 
@@ -19,7 +25,11 @@ const mapDispatchToProps = (dispatch) => ({
     textInputChanged: (text) => dispatch(textInputChanged(text)),
     submitButtonPressed: () => dispatch(submitButtonPressed()),
     helpButtonPressed: () => dispatch(helpButtonPressed()),
-    audioButtonPressed: () => dispatch(audioButtonPressed())
+    audioButtonPressed: () => dispatch(audioButtonPressed()),
+    helpButtonMousedown: () => dispatch(helpButtonMousedown()),
+    helpButtonMouseup: () => dispatch(helpButtonMouseup()),
+    submitButtonDown: () => dispatch(submitButtonDown()),
+    submitButtonUp: () => dispatch(submitButtonUp())
   }
 })
 

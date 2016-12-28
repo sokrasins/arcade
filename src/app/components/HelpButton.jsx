@@ -15,10 +15,12 @@ const styles = {
   }
 }
 
-function HelpButton ({ onClick }) {
+function HelpButton ({ onClick, onMouseDown, onMouseUp, active }) {
+  const labelStyle = (active ? {color: '#FFF'} : {color: '#000'})
+
   return (
-    <Button disabled={false} onPress={onClick} style={styles['Help']}>
-      ? 
+    <Button disabled={false} onPress={onClick} onMouseDown={onMouseDown} onMouseUp={onMouseUp} style={Object.assign({}, styles['Help'], labelStyle)}>
+      ?
     </Button>
   )
 }

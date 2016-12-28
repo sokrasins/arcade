@@ -19,8 +19,8 @@ function SoundButton ({ onClick, active }) {
   const labelStyle = (active ? {color: '#FFF'} : {color: '#000'})
 
   return (
-    <Button disabled={false} onPress={onClick} style={Object.assign(styles['Sound'], labelStyle)}>
-      {label}  
+    <Button disabled={false} onPress={onClick} style={Object.assign({}, styles['Sound'], labelStyle)}>
+      {label}
     </Button>
   )
 }

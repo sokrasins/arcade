@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react'
 
-function Button ({children, disabled, onPress, style}) {
+function Button ({children, disabled, onPress, onMouseDown, onMouseUp, style}) {
   return (
     <span>
-      <button disabled={disabled} onClick={onPress} style={style}>
+      <button disabled={disabled} onClick={onPress} onMouseDown={onMouseDown} onMouseUp={onMouseUp} style={style}>
         {children}
       </button>
     </span>

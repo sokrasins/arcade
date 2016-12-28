@@ -2,7 +2,11 @@ import {
   TEXT_INPUT_CHANGED,
   SUBMIT_BUTTON_PRESSED,
   HELP_BUTTON_PRESSED,
-  AUDIO_BUTTON_PRESSED
+  AUDIO_BUTTON_PRESSED,
+  HELP_BUTTON_MOUSEDOWN,
+  HELP_BUTTON_MOUSEUP,
+  SUBMIT_BUTTON_DOWN,
+  SUBMIT_BUTTON_UP
 } from '../actions/types'
 
 export const dialog = (state = {'newText': '', 'text': ['Hello']}, action) => {
@@ -25,6 +29,28 @@ export const audio = (state = false, action) => {
   switch (action.type) {
     case AUDIO_BUTTON_PRESSED:
       return !state
+    default:
+      return state
+  }
+}
+
+export const help = (state = false, action) => {
+  switch (action.type) {
+    case HELP_BUTTON_MOUSEDOWN:
+      return true
+    case HELP_BUTTON_MOUSEUP:
+      return false
+    default:
+      return state
+  }
+}
+
+export const submit = (state = false, action) => {
+  switch (action.type) {
+    case SUBMIT_BUTTON_DOWN:
+      return true
+    case SUBMIT_BUTTON_UP:
+      return false
     default:
       return state
   }

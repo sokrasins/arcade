@@ -24,8 +24,8 @@ class UserInput extends React.Component {
   render () {
     return (
       <div className="user-input" style={styles['Input']}>
-        <InputForm onChange={this,actions.textInputChanged} onSubmit={this.actions.submitButtonPressed} />
-        <HelpButton onClick={this.actions.helpButtonPressed} />
+        <InputForm onChange={this.actions.textInputChanged} onSubmit={this.actions.submitButtonPressed} submitDown={this.actions.submitButtonDown} submitUp={this.actions.submitButtonUp} active={this.props.submit} />
+        <HelpButton onClick={this.actions.helpButtonPressed} onMouseDown={this.actions.helpButtonMousedown} onMouseUp={this.actions.helpButtonMouseup} active={this.props.help} />
         <SoundButton onClick={this.actions.audioButtonPressed} active={this.props.audio} />
       </div>
     )

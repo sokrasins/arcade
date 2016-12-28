@@ -13,7 +13,7 @@ const styles = {
   'Form': {
     display: 'flex',
     width: '95%',
-    height: '40px',
+    height: '40px'
   },
 
   'Submit': {
@@ -38,6 +38,9 @@ class InputForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleKeyUp = this.handleKeyUp.bind(this)
   }
 
   handleChange (event) {
@@ -50,11 +53,25 @@ class InputForm extends React.Component {
     this.refs.command.value = ''
   }
 
+  handleKeyDown (event) {
+    if (event.keyCode === 13) {
+      this.props.submitDown()
+    }
+  }
+
+  handleKeyUp (event) {
+    if (event.keyCode === 13) {
+      this.props.submitUp()
+    }
+  }
+
   render () {
+    const labelStyle = (this.props.active ? {color: '#FFF'} : {color: '#000'})
+
     return (
       <form onSubmit={this.handleSubmit} style={styles['Form']} autoComplete="off">
-        <input type="text" name="command" ref="command" onChange={this.handleChange} style={styles['TextInput']} autoFocus fontFamily="Lucida Console, Monaco, monospace" />
-        <input type="submit" value="&#x25ba;" style={styles['Submit']} />
+        <input type="text" name="command" ref="command" onChange={this.handleChange} onKeyDown={this.handleKeyDown} onKeyUp={this.handleKeyUp} style={styles['TextInput']} autoFocus fontFamily="Lucida Console, Monaco, monospace" />
+        <input type="submit" value="&#x25ba;" onMouseDown={this.props.submitDown} onMouseUp={this.props.submitUp} style={Object.assign({}, styles['Submit'], labelStyle)} />
       </form>
     )
   }
