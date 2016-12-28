@@ -9,6 +9,7 @@ import {
   SUBMIT_BUTTON_UP
 } from '../actions/types'
 
+// Handle changes with text entry and display text
 export const dialog = (state = {'newText': '', 'text': ['Hello']}, action) => {
   switch (action.type) {
     case TEXT_INPUT_CHANGED:
@@ -25,6 +26,7 @@ export const dialog = (state = {'newText': '', 'text': ['Hello']}, action) => {
   }
 }
 
+// Handle changes related to audio
 export const audio = (state = false, action) => {
   switch (action.type) {
     case AUDIO_BUTTON_PRESSED:
@@ -34,6 +36,7 @@ export const audio = (state = false, action) => {
   }
 }
 
+// Handle changes related to help
 export const help = (state = false, action) => {
   switch (action.type) {
     case HELP_BUTTON_MOUSEDOWN:
@@ -45,6 +48,7 @@ export const help = (state = false, action) => {
   }
 }
 
+// Handle UI changes related to text submission
 export const submit = (state = false, action) => {
   switch (action.type) {
     case SUBMIT_BUTTON_DOWN:

@@ -24,7 +24,7 @@ const styles = {
     width: '40px',
     border: 'none',
     margin: 'auto',
-    backgroundColor: '#555',
+    backgroundColor: '#777',
     outline: 'none'
   }
 }
@@ -36,9 +36,9 @@ class InputForm extends React.Component {
     this.onChange = this.props.onChange
     this.onSubmit = this.props.onSubmit
 
+    // Bind this to event handlers
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
   }
@@ -70,8 +70,23 @@ class InputForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} style={styles['Form']} autoComplete="off">
-        <input type="text" name="command" ref="command" onChange={this.handleChange} onKeyDown={this.handleKeyDown} onKeyUp={this.handleKeyUp} style={styles['TextInput']} autoFocus fontFamily="Lucida Console, Monaco, monospace" />
-        <input type="submit" value="&#x25ba;" onMouseDown={this.props.submitDown} onMouseUp={this.props.submitUp} style={Object.assign({}, styles['Submit'], labelStyle)} />
+        <input type="text"
+          placeholder="What will you do?"
+          name="command"
+          ref="command"
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
+          onKeyUp={this.handleKeyUp}
+          style={styles['TextInput']}
+          autoFocus
+          fontFamily="Lucida Console, Monaco, monospace"
+        />
+        <input type="submit"
+          value="&#x25ba;"
+          onMouseDown={this.props.submitDown}
+          onMouseUp={this.props.submitUp}
+          style={Object.assign({}, styles['Submit'], labelStyle)}
+        />
       </form>
     )
   }

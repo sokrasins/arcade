@@ -1,19 +1,35 @@
 import React, { PropTypes } from 'react'
 
-function Button ({children, disabled, onPress, onMouseDown, onMouseUp, style}) {
+const styles = {
+  'default': {
+    display: 'flex',
+    justifyContent: 'center',
+    height: '40px',
+    width: '40px',
+    fontSize: '20px',
+    backgroundColor: '#777',
+    fontColor: '#FFF',
+    border: 'none',
+    outline: 'none'
+  }
+}
+
+function Button ({children, onPress, onMouseDown, onMouseUp, style}) {
   return (
     <span>
-      <button disabled={disabled} onClick={onPress} onMouseDown={onMouseDown} onMouseUp={onMouseUp} style={style}>
+      <button onClick={onPress} onMouseDown={onMouseDown} onMouseUp={onMouseUp} style={Object.assign({}, styles['default'], style)}>
         {children}
       </button>
     </span>
   )
 }
 
-export default Button
-
 Button.propTypes = {
-  children: PropTypes.node,
-  disabled: PropTypes.bool,
-  onPress: PropTypes.func
+  children: PropTypes.node.isRequired,
+  onPress: PropTypes.func.isRequired,
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  style: PropTypes.object
 }
+
+export default Button

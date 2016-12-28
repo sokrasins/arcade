@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// TODO: split between different UI elements
 const mapDispatchToProps = (dispatch) => ({
   actions: {
     textInputChanged: (text) => dispatch(textInputChanged(text)),
