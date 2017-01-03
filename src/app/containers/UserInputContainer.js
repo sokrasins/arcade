@@ -20,17 +20,20 @@ const mapStateToProps = (state) => {
   }
 }
 
-// TODO: split between different UI elements
 const mapDispatchToProps = (dispatch) => ({
-  actions: {
+  formActions: {
     textInputChanged: (text) => dispatch(textInputChanged(text)),
     submitButtonPressed: () => dispatch(submitButtonPressed()),
-    helpButtonPressed: () => dispatch(helpButtonPressed()),
-    audioButtonPressed: () => dispatch(audioButtonPressed()),
-    helpButtonMousedown: () => dispatch(helpButtonMousedown()),
-    helpButtonMouseup: () => dispatch(helpButtonMouseup()),
     submitButtonDown: () => dispatch(submitButtonDown()),
     submitButtonUp: () => dispatch(submitButtonUp())
+  },
+  helpActions: {
+    helpButtonPressed: () => dispatch(helpButtonPressed()),
+    helpButtonMousedown: () => dispatch(helpButtonMousedown()),
+    helpButtonMouseup: () => dispatch(helpButtonMouseup())
+  },
+  soundActions: {
+    audioButtonPressed: () => dispatch(audioButtonPressed())
   }
 })
 

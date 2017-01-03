@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './common/Button'
 
 const styles = {
   'TextInput': {
@@ -6,6 +7,7 @@ const styles = {
     backgroundColor: '#222222',
     color: '#FFFFFF',
     fontSize: '20px',
+    paddingLeft: '3px',
     outline: 'none',
     border: 'none'
   },
@@ -14,19 +16,22 @@ const styles = {
     display: 'flex',
     width: '95%',
     height: '40px'
-  },
-
-  'Submit': {
-    display: 'flex',
-    fontSize: '20px',
-    justifyContent: 'center',
-    height: '40px',
-    width: '40px',
-    border: 'none',
-    margin: 'auto',
-    backgroundColor: '#777',
-    outline: 'none'
   }
+}
+
+function SubmitButton ({ onClick, onMouseDown, onMouseUp, active }) {
+  const labelStyle = (active ? {color: '#FFF'} : {color: '#000'})
+
+  return (
+    <Button
+      onPress={onClick}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      style={labelStyle}
+    >
+      &#x25ba;      
+    </Button>
+  )
 }
 
 class InputForm extends React.Component {
@@ -66,10 +71,8 @@ class InputForm extends React.Component {
   }
 
   render () {
-    const labelStyle = (this.props.active ? {color: '#FFF'} : {color: '#000'})
-
     return (
-      <form onSubmit={this.handleSubmit} style={styles['Form']} autoComplete="off">
+      <form style={styles['Form']} autoComplete="off">
         <input type="text"
           placeholder="What will you do?"
           name="command"
@@ -81,11 +84,11 @@ class InputForm extends React.Component {
           autoFocus
           fontFamily="Lucida Console, Monaco, monospace"
         />
-        <input type="submit"
-          value="&#x25ba;"
+        <SubmitButton
+          onClick={this.handleSubmit}
           onMouseDown={this.props.submitDown}
           onMouseUp={this.props.submitUp}
-          style={Object.assign({}, styles['Submit'], labelStyle)}
+          active={this.props.active}
         />
       </form>
     )
@@ -93,3 +96,4 @@ class InputForm extends React.Component {
 }
 
 export default InputForm
+

@@ -27,6 +27,7 @@ const styles = {
 
 class TextOutput extends React.Component {
   render () {
+    // TODO: Move this so it happens as the reult of an action firing, and is passed to the component
     var displayText = []
     for (var i in this.props.text) {
       displayText.push(this.props.text[i])
@@ -42,6 +43,7 @@ class TextOutput extends React.Component {
     )
   }
 
+  // Automatically move the scrollbar to the bottom each time the component is updated
   componentDidUpdate () {
     let node = ReactDOM.findDOMNode(this.refs.textContent)
     node.scrollTop = node.scrollHeight

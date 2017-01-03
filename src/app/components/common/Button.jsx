@@ -9,6 +9,7 @@ const styles = {
     fontSize: '20px',
     backgroundColor: '#777',
     fontColor: '#FFF',
+    fontWeight: 'bold',
     border: 'none',
     outline: 'none'
   }

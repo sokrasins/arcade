@@ -17,7 +17,12 @@ function HelpButton ({ onClick, onMouseDown, onMouseUp, active }) {
   const labelStyle = (active ? {color: '#FFF'} : {color: '#000'})
 
   return (
-    <Button disabled={false} onPress={onClick} onMouseDown={onMouseDown} onMouseUp={onMouseUp} style={labelStyle}>
+    <Button
+      onPress={onClick}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      style={labelStyle}
+    >
       ?
     </Button>
   )
@@ -28,7 +33,7 @@ function SoundButton ({ onClick, active }) {
   const labelStyle = (active ? {color: '#FFF'} : {color: '#000'})
 
   return (
-    <Button disabled={false} onPress={onClick} style={labelStyle}>
+    <Button onPress={onClick} style={labelStyle}>
       {label}
     </Button>
   )
@@ -38,27 +43,29 @@ class UserInput extends React.Component {
   constructor (props) {
     super(props)
 
-    this.actions = this.props.actions
+    this.formActions = this.props.formActions
+    this.helpActions = this.props.helpActions
+    this.soundActions = this.props.soundActions
   }
 
   render () {
     return (
       <div className="user-input" style={styles['Input']}>
         <InputForm
-          onChange={this.actions.textInputChanged}
-          onSubmit={this.actions.submitButtonPressed}
-          submitDown={this.actions.submitButtonDown}
-          submitUp={this.actions.submitButtonUp}
+          onChange={this.formActions.textInputChanged}
+          onSubmit={this.formActions.submitButtonPressed}
+          submitDown={this.formActions.submitButtonDown}
+          submitUp={this.formActions.submitButtonUp}
           active={this.props.submit}
         />
         <HelpButton
-          onClick={this.actions.helpButtonPressed}
-          onMouseDown={this.actions.helpButtonMousedown}
-          onMouseUp={this.actions.helpButtonMouseup}
+          onClick={this.helpActions.helpButtonPressed}
+          onMouseDown={this.helpActions.helpButtonMousedown}
+          onMouseUp={this.helpActions.helpButtonMouseup}
           active={this.props.help}
         />
         <SoundButton
-          onClick={this.actions.audioButtonPressed}
+          onClick={this.soundActions.audioButtonPressed}
           active={this.props.audio}
         />
       </div>
