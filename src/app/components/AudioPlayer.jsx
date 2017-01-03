@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 class AudioPlayer extends React.Component {
   constructor(props) {
     super(props)
-    this.arcadeSound = require('file!./../audio/arcade92.mp3');
+    this.arcadeSound = require('file!./../audio/background.mp3');
     this.changeVolume = this.changeVolume.bind(this)
   }
 

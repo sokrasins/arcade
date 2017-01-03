@@ -28,7 +28,7 @@ export const dialog = (state = {'newText': '', 'text': ['Hello']}, action) => {
 
 // Handle changes related to audio
 // TODO: change default state to 'true'
-export const audio = (state = false, action) => {
+export const audio = (state = true, action) => {
   switch (action.type) {
     case AUDIO_BUTTON_PRESSED:
       return !state
