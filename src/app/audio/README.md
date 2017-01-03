@@ -1,6 +1,7 @@
 # Sources for test audio files
 
-arcade.mp3 - https://www.freesound.org/people/Kalou/sounds/343330/
+background.mp3 - included
 
-arcade92.mp3 - http://mirrors.arcadecontrols.com/Arcade-Ambiance-Project/arcade92.mp3
+## Licensing
 
+This The media in this directory is available under the terms in [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)
